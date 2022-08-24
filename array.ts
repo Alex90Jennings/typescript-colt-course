@@ -21,3 +21,5 @@ const headphone = {name: "headphone", price: 40}
 productArray.push(dildo, screenPortable, headphone)
 
 console.log(getTotal(productArray))
+
+export {};
