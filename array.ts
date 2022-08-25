@@ -15,10 +15,10 @@ function getTotal(products: Product[]): number {
 }
 
 const dildo = {name: "dildo", price: 10}
-const screenPortable = {name: "screen portable", price: 200}
+const screen = {name: "screen portable", price: 200}
 const headphone = {name: "headphone", price: 40}
 
-productArray.push(dildo, screenPortable, headphone)
+productArray.push(dildo, screen, headphone)
 
 console.log(getTotal(productArray))
 

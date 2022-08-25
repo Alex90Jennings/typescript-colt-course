@@ -1,8 +1,9 @@
+"use strict";
+exports.__esModule = true;
 var ages = [];
 var gameBoard = [];
 var productArray = [];
 function getTotal(products) {
-    console.log(products.length);
     var sum = 0;
     for (var i = 0; i < products.length; i++) {
         sum += products[i].price;
