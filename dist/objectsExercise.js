@@ -1,4 +1,5 @@
-var dune = {
+"use strict";
+const dune = {
     title: "Dune",
     originalTitle: "Dune Part One",
     director: "Denis Villeneuve",
@@ -9,7 +10,7 @@ var dune = {
         grossWorldwide: 400671789
     }
 };
-var cats = {
+const cats = {
     title: "Cats",
     director: "Tom Hooper",
     releaseYear: 2019,
@@ -20,6 +21,7 @@ var cats = {
     }
 };
 function getProfit(movie) {
-    return movie.boxOffice.grossWorldwide - movie.boxOffice.budget;
+    const bo = movie.boxOffice;
+    return bo.grossWorldwide - bo.budget;
 }
-console.log("Cats made ".concat(getProfit(cats), ", Dune made ").concat(getProfit(dune)));
+console.log(`Cats made ${getProfit(cats)}, Dune made ${getProfit(dune)}`);
