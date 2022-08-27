@@ -1,14 +1,12 @@
 "use strict";
-const btn = document.getElementById("btn");
-const input = document.getElementById("todoinput");
-const form = document.getElementById("todoform");
-const todoList = document.getElementById("todolist");
-function handleSubmit(e) {
-    e.preventDefault();
-    const newTodoText = input.value;
-    const newLI = document.createElement("LI");
-    newLI.append(newTodoText);
-    todoList.append(newLI);
-    input.value = "";
+class Player {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+        this.score = 0;
+        this.first = first;
+        this.last = last;
+    }
 }
-form.addEventListener("submit", handleSubmit);
+const rina = new Player("Rina", "Jennings");
+console.log(rina);

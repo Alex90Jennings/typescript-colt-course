@@ -1,15 +1,11 @@
-const btn = document.getElementById("btn")! as HTMLButtonElement
-const input = document.getElementById("todoinput")! as HTMLInputElement
-const form = document.getElementById("todoform")! as HTMLFormElement
-const todoList = document.getElementById("todolist")!
+class Player {
+    score: number = 0
 
-function handleSubmit (e: SubmitEvent) {
-    e.preventDefault()
-    const newTodoText = input.value
-    const newLI = document.createElement("LI")
-    newLI.append(newTodoText)
-    todoList.append(newLI)
-    input.value = ""
+    constructor (public first: string, public last:string){
+        this.first = first
+        this.last = last
+    }
 }
 
-form.addEventListener("submit", handleSubmit)
+const rina = new Player("Rina", "Jennings")
+console.log(rina)
