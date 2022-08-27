@@ -4,8 +4,8 @@ function getRandomElement<T>(list: T[]): T {
     return list[randomIndex]
 }
 
-function merge<T,U>(object1: T, object2: U) {
+function merge<T extends object,U extends object>(object1: T, object2: U) {
     return {...object1, ...object2}
 }
 
-console.log(merge({name: "alex"}, {dog: "rina"}))
+console.log(merge({name: "alex"}, {flakjd: 9}))

@@ -6,4 +6,4 @@ function getRandomElement(list) {
 function merge(object1, object2) {
     return Object.assign(Object.assign({}, object1), object2);
 }
-console.log(merge({ name: "alex" }, { dog: "rina" }));
+console.log(merge({ name: "alex" }, { flakjd: 9 }));
