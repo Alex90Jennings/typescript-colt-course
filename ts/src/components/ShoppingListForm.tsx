@@ -1,16 +1,25 @@
 import React, {useRef} from "react";
 
-function ShoppingListForm(): JSX.Element {
-    const inputRef = useRef<HTMLInputElement>(null)
+interface ShoppingListFormProps {
+    onAddItem: (item: string) => void
+}
+
+function ShoppingListForm({onAddItem}: ShoppingListFormProps): JSX.Element {
+    const productInputRef = useRef<HTMLInputElement>(null)
+    const quantityInputRef = useRef<HTMLInputElement>(null)
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
-        console.log(inputRef.current?.value)
-        inputRef.current!.value = ""
+        const product = productInputRef.current!.value
+        const quantity = Number(quantityInputRef.current!.value)
+        onAddItem(product, quantity)
+        productInputRef.current!.value = ""
+        quantityInputRef.current!.value = "1"
     }
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="honeydew"></input>
+            <input type="text" placeholder="honeydew" ref={productInputRef}></input>
+            <input type="number" min={0} placeholder="0" ref={quantityInputRef}></input>
             <button type="submit">Add Item</button>
         </form>
     )

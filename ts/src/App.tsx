@@ -3,32 +3,19 @@ import './App.css';
 import Greeter from "./components/Greeter"
 import ShoppingList from './components/ShoppingList';
 import ShoppingListForm from './components/ShoppingListForm';
+import Item from "./models/Item"
+import {v4 as getId} from "uuid"
 
 function App() {
-  interface Item {
-    id: number,
-    product: string,
-    quantity: number
-  }
-
-  interface ShoppingListProps {
-    items: Item[]
-  }
-
   const [items, setItems] = useState<Item[]>([])
 
-  
-
-  // const items = [
-  //   {id: 1, product: "Sea Shoes", quantity: 2},
-  //   {id: 2, product: "Pasta", quantity: 5}
-  // ]
+  const onAddItem = (product: string, quantity: number) => {setItems([...items, {id: Number(getId()), product: product, quantity: quantity}])}
 
   return (
     <div className="App">
       <Greeter person="Rina"/>
-      <ShoppingList items={items} ShoppingListProps={ShoppingListProps}/>
-      <ShoppingListForm />
+      <ShoppingList items={items} />
+      <ShoppingListForm onAddItem={onAddItem}/>
     </div>
   );
 }
