@@ -9,7 +9,7 @@ import {v4 as getId} from "uuid"
 function App() {
   const [items, setItems] = useState<Item[]>([])
 
-  const onAddItem = (product: string, quantity: number) => {setItems([...items, {id: Number(getId()), product: product, quantity: quantity}])}
+  const onAddItem = (product: string, quantity: number) => {setItems([...items, {id: getId(), product: product, quantity: quantity}])}
 
   return (
     <div className="App">

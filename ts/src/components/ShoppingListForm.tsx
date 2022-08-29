@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 
 interface ShoppingListFormProps {
-    onAddItem: (item: string) => void
+    onAddItem: (item: string, quantity: number) => void
 }
 
 function ShoppingListForm({onAddItem}: ShoppingListFormProps): JSX.Element {
@@ -19,7 +19,7 @@ function ShoppingListForm({onAddItem}: ShoppingListFormProps): JSX.Element {
     return(
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="honeydew" ref={productInputRef}></input>
-            <input type="number" min={0} placeholder="0" ref={quantityInputRef}></input>
+            <input type="number" min={1} placeholder="1" ref={quantityInputRef}></input>
             <button type="submit">Add Item</button>
         </form>
     )
